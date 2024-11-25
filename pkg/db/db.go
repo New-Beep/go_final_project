@@ -20,7 +20,7 @@ func New() (*sql.DB, error) {
 func GetTasks(db *sql.DB) ([]controller.Task, error) {
 	rows, err := db.Query(
 		"SELECT id, date, title, comment, repeat " +
-			"FROM scheduler ORDER BY date DESC LIMIT 10 OFFSET 0",
+			"FROM scheduler ORDER BY date LIMIT 10 OFFSET 0",
 	)
 	if err != nil {
 		return nil, err
